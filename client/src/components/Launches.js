@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import LaunchItem from './LaunchItem';
-import MissionKey from './MissionKey';
 
 const LAUNCHES_QUERY = gql`
 	query LaunchesQuery {
@@ -19,7 +18,6 @@ function DisplayLaunches() {
 
 	if (loading) return <h4>Loading...</h4>;
 	if (error) console.log(error);
-	console.log(data);
 
 	return (
 		<Fragment>
@@ -36,7 +34,6 @@ export class Launches extends Component {
 			<div>
 				<Fragment>
 					<h1 className='display-4 my-3'>Launches</h1>
-					<MissionKey />
 					<DisplayLaunches />
 				</Fragment>
 			</div>
